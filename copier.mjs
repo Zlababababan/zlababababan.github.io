@@ -8,7 +8,9 @@ import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const W = join(here, "..");
-const games = { orbite: "Orbite", birdclimber: "BirdClimberV2", moitie: "Moitie", esquive: "Esquive", etoiles: "Etoiles" };
+const games = { orbite: "Orbite", birdclimber: "BirdClimberV2", moitie: "Moitie", esquive: "Esquive", etoiles: "Etoiles",
+  slidestone: "Glisse", lumirror: "Laser" };
+// Les adresses déjà publiées gardent leur dossier même si le jeu a été renommé (orbite = Ringhop, etc.).
 for (const [dir, project] of Object.entries(games)) {
   const src = join(W, project, "docs", "privacy.html");
   if (!existsSync(src)) { console.log(`${dir} : pas de docs/privacy.html, ignoré`); continue; }
